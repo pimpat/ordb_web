@@ -1,0 +1,273 @@
+body{
+  font-family: Arial;
+  padding-top: 5%;
+}
+p.msg {
+  border:1px;
+  border-radius: 20px;
+  /*border-style: solid;*/
+  /*border-color:black;*/
+  padding: 5px 15px 5px 15px;
+  margin-left: 20px;
+  /*width:280px;*/
+  /*background: #eee;*/
+  background: #E8D5B9;
+  background-size: contain;
+  float: left;
+  clear: both;
+}
+p.me {
+  border:1px;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+  margin-right: 20px;
+  /*width:280px;*/
+  background-size: contain;
+  background: #B3ED7A;
+  float: right;
+  clear: both;
+}
+p.hilight{
+  background-color:yellow;
+  padding:3px;
+  text-align:center;
+  clear: both;
+}
+
+p.hilight2{
+  background-color:lime;
+  padding:3px;
+  text-align:center;
+  clear: both;
+}
+
+p.hilight3{
+  background-color:tomato;
+  padding:3px;
+  text-align:center;
+  clear: both;
+}
+
+#newusr,
+#recv,
+#chatfield,
+#onlinelist{
+  display:inline;
+  position:relative;
+  float:left;
+}
+#newusr,
+#chatfield {
+  width:100%;
+  padding:15px 25px 15px 25px;
+}
+
+#newusr{
+  background-color:#424242;
+  color: #fff;
+  margin-bottom:1%;
+}
+#newusr input{
+  color: #000;
+}
+#chatfield{
+  /*background-color:#eeeeee;*/
+  background-color:#FF9900;
+  margin-top:1%;
+}
+#recv{
+  /*background-color:powderblue;*/
+  background: #F1F0EA;
+  overflow-y: scroll;
+  width:70%;
+  height:500px;
+}
+#onlinelist{
+  /*background-color:orange;*/  
+  background-color:#F1F0EA;
+  overflow-y: scroll;
+  width:30%;
+  height:500px;
+}
+
+
+/*-------------------------- PLa css --------------------------*/
+
+
+/*----- Accordion -----*/
+.accordion, .accordion * {
+  -webkit-box-sizing:border-box; 
+  -moz-box-sizing:border-box; 
+  box-sizing:border-box;
+}
+
+.accordion {
+  overflow:hidden;
+  box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+  border-radius:0px;
+  background:#f7f7f7;
+}
+
+/*----- Section Titles -----*/
+.accordion-section-title {
+  width:100%;
+  padding:8px;
+  display:inline-block;
+  border-bottom:1px solid #BCBCBC;
+  background:#E9E9E9;
+  transition:all linear 0.15s;
+  /* Type */
+  font-size:1em;
+  /* text-shadow:0px 1px 0px #1a1a1a; */
+  color:#000;
+  padding-left: 25px;
+}
+
+.accordion-section-title.active, .accordion-section-title:hover {
+  background:#DFD9D6;
+  text-decoration:none;
+  color: #000;
+}
+
+.accordion-section:last-child .accordion-section-title {
+  border-bottom:none;
+}
+
+/*----- Section Content -----*/
+.accordion-section-content {
+  padding:15px;
+  display:none;
+}
+
+
+.center-bold{
+  font-weight: bold;
+  text-align: center;
+}
+hr{
+  border-color: #000 !important;
+}
+#newusr #loginName{
+  width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#newusr #loginName{
+  margin-left: 10px;
+}
+.title-head{
+  margin: 0;
+  padding: 25px;
+  background: #948077;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #685a53;
+}
+.title-subhead{
+  margin: 0;
+  padding: 15px;
+  background: #948077;
+  border-bottom: 1px solid #685A53;
+}
+.online{
+  color: #2ecc71;
+}
+
+/* online user list */
+
+.userlist li{
+  text-decoration: none;
+}
+.userlist a{
+  text-decoration: none;
+}
+.onlineusr{
+  width:100%;
+  padding:8px;
+  display:inline-block;
+  border-bottom:1px solid #DFD9D6;
+  transition:all linear 0.15s;
+  color:#000;
+  font-size: 1em;
+  padding-left: 25px;
+}
+.ood{
+  background:#E9E9E9;
+}
+.even{
+  background:#ECF0F1;
+}
+.onlineusr.active, .onlineusr:hover {
+  background:#DFD9D6;
+  text-decoration:none;
+  color: #000;
+}
+.glyphicon-comment{
+  color: #27ae60;
+}
+.icon-custom{
+  margin-right: 10px;
+}
+
+/*---------------------*/
+
+/* group user list */
+
+.group-icon{
+  color: #3498db;
+}
+.subgroup-icon{
+  color: #27ae60;
+}
+#grouplist ul{
+  list-style-type: none;
+}
+#grouplist a{
+  text-decoration: none;
+}
+#grouplist li{
+  text-decoration: none;
+}
+
+/*---------------------*/
+
+.cur-friend{
+  color: orange;
+}
+#onlinelist ul{
+  margin-bottom: 0;
+}
+#chatbox h4{
+  color: #fff;
+}
+
+#chatfield input{
+  width: 94%;
+}
+#chatfield button{
+  margin-left: 10px;
+}
+.leave_btn{
+  margin-left: 10px;
+}
+
+
+/* DataModel page */
+
+.dm-btn{
+  margin-top: 15px;
+}
+
+/* Search content */
+.search-contain, .login-contain{
+  display: inline;
+}
+.search-contain{
+  float: right;
+}
+.login-contain button{
+  margin-right: 10px;
+}
+#yourname{
+  display: inline-block;
+}
+

@@ -1,0 +1,18 @@
+@media screen and (max-width: 991px) {
+	.search-contain{
+		float: right;
+	}
+	.login-contain{
+		float: left;
+	}
+	.login-contain label{
+		display: none;
+	}
+	#yourname{
+		margin: 10px 0 0 10px;
+		/*display: none;*/
+	}
+	#chatfield input{
+		width: 91%;
+	}
+}

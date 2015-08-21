@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Datamodel</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery.treemenu.css">
+</head>
+<body>
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="loginBox inline">
+        <input class="form-control inline input-sm custom-size" id="loginName" type="text" placeholder="Username">
+      <button type="button" class="btn btn-default btn-sm" onclick="req(11)">Login</button>
+      </div>
+      <div class="cloneBox inline none">
+        Send : 
+        <input class="form-control inline input-sm custom-size" id="selectId" type="text"placeholder="DataId">
+        ->
+        <input class="form-control inline input-sm custom-size" id="selectUsername" type="text" placeholder="toUsername">
+        <button type="button" class="btn btn-default btn-sm" onclick="req(12)">Submit</button>
+      </div>
+    </div>
+    <div class="row underrow">
+      <div class="queryBox inline none">
+        <input class="form-control inline input-sm" style="width: 255px;" id="queryId" type="text" placeholder="UserId">
+      <button type="button" class="btn btn-default btn-sm" onclick="req(13)">Query</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div>
+      <ul class="tree">
+        <li>
+          <a href="#">Organize</a>
+          <button type="button" class="btn btn-default btn-xs" onclick="openform('org')">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </button>
+          <!-- form -->
+          <div class="inline none" id="orgForm">
+            <input class="form-control inline input-sm custom-size" id="orgInput" type="text">
+            <button type="button" class="btn btn-default btn-xs" onclick="req(1)">add</button>
+          </div>
+          <ul id="orgHead" class="none">
+            <li>
+              <a href="#">User</a>
+              <button type="button" class="btn btn-default btn-xs" onclick="openform('user')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </button>
+              <!-- form -->
+              <div class="inline none" id="userForm">
+                <input class="form-control inline input-sm custom-size" id="userInput" type="text">
+                <button type="button" class="btn btn-default btn-xs" onclick="req(2)">add</button>
+              </div>
+              <ul id="userHead" class="none">
+                <li>
+                  <a href="#">Category</a>
+                  <button type="button" class="btn btn-default btn-xs" onclick="openform('category')">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  </button>
+                  <!-- form -->
+                  <div class="inline none" id="categoryForm">
+                    <input class="form-control inline input-sm custom-size" id="categoryInput" type="text">
+                    <button type="button" class="btn btn-default btn-xs" onclick="req(3)">add</button>
+                  </div>
+                  <ul id="categoryHead" class="none">
+                    <li>
+                      <a href="#">State</a>
+                      <button type="button" class="btn btn-default btn-xs" onclick="openform('state')">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      </button>
+                      <!-- form -->
+                      <div class="inline none" id="stateForm">
+                        <input class="form-control inline input-sm custom-size" id="stateInput" type="text">
+                        <button type="button" class="btn btn-default btn-xs" onclick="req(4)">add</button>
+                      </div>
+                      <ul id="stateHead" class="none">
+                        <li>
+                          <a href="#">Task</a>
+                          <button type="button" class="btn btn-default btn-xs" onclick="openform('task')">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                          <!-- form -->
+                          <div class="inline none" id="taskForm">
+                            <input class="form-control inline input-sm custom-size" id="taskInput" type="text">
+                            <button type="button" class="btn btn-default btn-xs" onclick="req(5)">add</button>
+                          </div>
+                          <ul id="taskHead" class="none">
+                            <li>
+                              <a href="#">Subtask</a>
+                              <button type="button" class="btn btn-default btn-xs" onclick="openform('subtask')">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                              </button>
+                              <!-- form -->
+                              <div class="inline none" id="subtaskForm">
+                                <input class="form-control inline input-sm custom-size" id="subtaskInput" type="text">
+                                <button type="button" class="btn btn-default btn-xs" onclick="req(6)">add</button>
+                              </div>
+                              <ul id="subtaskHead">
+
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">Task</a><button type="button" class="btn btn-default btn-xs" onclick="openform('task2')">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </button>
+                    <!-- form -->
+                    <div class="inline none" id="taskForm2">
+                      <input class="form-control inline input-sm custom-size" id="taskInput2" type="text">
+                      <button type="button" class="btn btn-default btn-xs" onclick="req(7)">add</button>
+                    </div>
+                    <ul id="taskHead2" class="none">
+                      <li>
+                        <a href="#">Subtask</a>
+                        <button type="button" class="btn btn-default btn-xs" onclick="openform('subtask2')">
+                          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                        <!-- form -->
+                        <div class="inline none" id="subtaskForm2">
+                          <input class="form-control inline input-sm custom-size" id="subtaskInput2" type="text">
+                          <button type="button" class="btn btn-default btn-xs" onclick="req(8)">add</button>
+                        </div>
+                        <ul id="subtaskHead2">
+
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="editData" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Data</h4>
+        </div>
+        <div class="modal-body">
+          <label for="">dataID : <span id="edit-dataId"></span></label>
+          <textarea id="edit-dataContent" cols="75" rows="10"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" onclick="req(9)">Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery.treemenu.js"></script>
+<script src="js/bootstrap3.3.5.js"></script>
+<script src="js/script.js"></script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+</body>
+</html>

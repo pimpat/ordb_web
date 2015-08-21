@@ -1,0 +1,33 @@
+CREATE VERTEX Teacher set name='<20KB>'
+i:10000, arv:0.025781 ms
+i:50000, arv:0.032813 ms
+i:100000, arv:0.031250 ms
+i:200000, arv:0.030469 ms
+i:300000, arv:0.031250 ms
+i:500000, arv:0.025781 ms
+i:1000000, arv:0.031250 ms
+allarv: 0.030242 ms
+
+CREATE VERTEX Student set name='<20KB>'
+i:10000, arv:0.030469 ms
+i:50000, arv:0.034375 ms
+i:100000, arv:0.032813 ms
+i:200000, arv:0.026562 ms
+i:300000, arv:0.032813 ms
+i:500000, arv:0.029687 ms
+i:1000000, arv:0.029687 ms
+allarv: 0.030562 ms
+
+CREATE EDGE Teach from #11:<index> to #12:<index> (vertex 10k + 10k)
+allarv: 0.014063 ms
+
+CREATE EDGE Teach from #11:<index> to #12:<index> (vertex 1m + 1m)
+i:10000, arv:0.013281 ms
+i:50000, arv:0.016406 ms
+i:100000, arv:0.011719 ms
+i:200000, arv:0.011719 ms
+i:300000, arv:0.014844 ms
+i:500000, arv:0.014844 ms
+i:1000000, arv:0.013281 ms
+allarv: 0.014680 ms
+

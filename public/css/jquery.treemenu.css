@@ -1,0 +1,152 @@
+/* For treemenu.js */
+.treemenu {
+    margin-left: -1.5em;
+}
+.treemenu li {
+    list-style: none;
+}
+
+.toggler {
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    cursor: default;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 0.1em !important;
+    border: 0.1em solid transparent;
+    border-radius: 50%;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+li.tree-opened > .toggler:hover,li.tree-closed > .toggler:hover {
+    border-color: #aaa;
+    cursor: pointer;
+}
+
+li.tree-empty > .toggler { 
+    color: #e74c3c; 
+}
+li.tree-empty > span.toggler:before { 
+    content: "\2022";
+    font-size: 1.5em; 
+}
+li.tree-closed > span.toggler:before { 
+    content: "+"; 
+    font-size: 1.5em; 
+}
+li.tree-opened > span.toggler:before { 
+    content: "\2212"; 
+    font-size: 1.5em; 
+}
+
+.tree {
+    /*border: 1px solid #000;*/
+    color:#33495D;
+}
+.tree li,
+.tree li > a,
+.tree li > span {
+    padding: 4pt;
+    border-radius: 4px;
+}
+
+.tree li a {
+   color:#33495D;
+   text-decoration: none;
+   line-height: 20pt;
+   border-radius: 4px;
+}
+
+.tree li a:hover {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.active {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.active a {
+    color: #fff;
+}
+
+.tree li a.active:hover {
+    background-color: #2ecc71;
+}
+
+/* Datamodel page */
+
+body{
+    background: #fff;
+}
+.parent-title{
+    font-weight: bold;
+}
+li ul{
+    border-left: 1px solid gray;
+    border-radius: 0px !important;
+}
+li > span{
+    margin-left: -30px;
+}
+
+/* modal */
+.modal-header, .modal-body{
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+.modal-header{
+    text-align: center;
+}
+
+
+
+li.tree-closed > a, li.tree-opened > a{
+    font-weight: bold;
+}
+select.form-control{
+    width: 200px !important;
+}
+.modal-body > .form-inline{
+    margin-top: 10px;
+}
+.form-inline > .form-control{
+    width: 400px;
+    margin-left: 15px;
+}
+
+pre {
+   white-space: pre-wrap;
+   display: inline;
+}
+.inline{
+    display: inline !important;
+}
+
+/* Tree form */
+.custom-size{
+    width: 150px !important;
+}
+.none{
+    /*display: none !important;*/
+}
+textarea, xmp{
+    color: #33495D !important;
+}
+.header{
+    width: 100%;
+    height: 70;
+    background-color: #ff8400;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.cloneBox{
+    margin-left: 40px;
+}
+.underrow{
+    margin-top: 5px;
+}
