@@ -35,18 +35,39 @@ io.on('connection', function(socket){
         break;
       case "1":
         //  "1" and "4"
+        console.log("[createData/queryData]-----------------------(REP)");
         console.log(x);
         socket.emit('created', x);
         break;
-      case "5":
+      case "2":
+        console.log("[login]-----------------------(REP)");
+        console.log(x[2]+"-->"+x[1]);
+        socket.emit('loginSuccess', x);
+        break;
+      case "3":
         console.log("[cloneData]-----------------------(REP)");
         console.log("clone.."+x[2]+" to "+x[3]+"-->"+x[1]);
         socket.emit('cloned', x);
         break;
+      case "4":
+        console.log("[getDatalist]-----------------------(REP)");
+        console.log(x);
+        socket.emit('onDatalists', x);
+        break;
+      case "5":
+        console.log("[editData/getDatafromDatalist]-----------------------(REP)");
+        console.log(x);
+        socket.emit('genDatafromDatalists', x);
+        break;
       case "6":
-        console.log("[login]-----------------------(REP)");
-        console.log(x[2]+"-->"+x[1]);
-        socket.emit('loginSuccess', x);
+        console.log("[deleteData]-----------------------(REP)");
+        console.log(x);
+        socket.emit('deleteCallback', x);
+        break;
+      case "404":
+        console.log("[addEdge/notification]-----------------------(REP)");
+        console.log(x);
+        socket.emit('notification', x[1]);
         break;
       case "10":
         console.log("[readmsg]-----------------------(REP)");
@@ -79,7 +100,15 @@ console.log("Sending request...");
   //-----------------------------------------------
 
   socket.on("createData",function(data){
+    console.log("[createData]-----------------------(REQ)");
     console.log(data);
+    if (data.msg == "1") {
+      requester.send("1:"+data.msg+":"+data.name+":org");
+    }
+    else{
+      requester.send("1:"+data.msg+":"+data.name+":"+data.upperid);
+    }
+    /*
     if (data.msg == "1") {
       requester.send("1:1:"+data.name);
     }
@@ -101,18 +130,22 @@ console.log("Sending request...");
     else if (data.msg == "7") {
       requester.send("1:7:"+data.name);
     }
-   
+   */
  });
 
   socket.on("editData",function(data){
+    console.log("[editData]-----------------------(REQ)");
     requester.send("2:"+data.id+":"+data.content);
   });
 
   socket.on("deleteData",function(data){
-    requester.send("3:"+data);
+    console.log("[deleteData]-----------------------(REQ)");
+    // requester.send("3:"+data);
+    requester.send("3:"+data.objId+":"+data.upperId+":"+data.userId);
   });
 
   socket.on("queryData",function(data){
+    console.log("[queryData]-----------------------(REQ)");
     console.log(data);
     requester.send("4:"+data);
   });
@@ -132,31 +165,42 @@ console.log("Sending request...");
     requester.send("6:"+username);
   });
 
+  socket.on("getDatalist",function(data){
+    console.log("[getDatalist]-----------------------(REQ)");
+    if (data.msg == "8") {
+      requester.send("7:8:org");
+    }
+    else{
+      requester.send("7:"+data.msg+":"+data.id);
+    }
+  });
+
+  socket.on("getDatafromDatalist",function(data){
+    console.log("[getDatafromDatalist]-----------------------(REQ)");
+    console.log(data);
+    requester.send("8:"+data);
+  });
+
+  socket.on("addEdge",function(data){
+    console.log("[addEdge]-----------------------(REQ)");
+    requester.send("9:"+data.msg+":"+data.Ldata+":"+data.Rdata);
+  }); 
+
   socket.on("disconnect",function(){
-      if(usernames[socket.username] != undefined){
-        console.log("[disconnect]-----------------------(REQ)");
-        console.log(socket.username);
-        console.log('\''+socket.username+'\' disconnected.');
+    if(usernames[socket.username] != undefined){
+      console.log("[disconnect]-----------------------(REQ)");
+      console.log(socket.username);
+      console.log('\''+socket.username+'\' disconnected.');
 
-        var tempname = socket.username;
-        delete usernames[tempname];
-        console.log(usernames);
-        requester.send("0:"+tempname);
-      }
-      // else {
-      //   console.log("undefined user");
-      // }
-    });
-
-  // socket.on("setChatRoom",function(data){
-  //   requester.send("4:"+data);
-  // });
-
-  // socket.on("getChatRoom",function(data){
-  //   requester.send("5:");
-  // });
-
-
+      var tempname = socket.username;
+      delete usernames[tempname];
+      console.log(usernames);
+      requester.send("0:"+tempname);
+    }
+    // else {
+    //   console.log("undefined user");
+    // }
+  });
 });
 
 http.listen(3333, function(){
